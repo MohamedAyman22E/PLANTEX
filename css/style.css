@@ -113,7 +113,7 @@ section {
   border-radius: 10px;
 }
 /************************* start header *************************/
-/* header .nav {
+header .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -125,7 +125,7 @@ section {
   z-index: 100000;
   transition: 0.3s;
   background-color: var(--body-color);
-} */
+}
 header.sticky .nav {
   position: fixed;
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
@@ -362,6 +362,66 @@ header.sticky .nav {
   background-color: var(--first-color);
 }
 /************************* end card *************************/
+/************************* start product *************************/
+.product .heading {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+.product .heading h2 {
+  font-size: var(--mb-2-5);
+  margin-bottom: 20px;
+}
+.product .allProduct {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, auto));
+  margin-top: 40px;
+  gap: 20px;
+  padding: 0 15%;
+}
+.product .allProduct .box {
+  padding: 0 20px;
+  position: relative;
+  z-index: -3;
+}
+.product .allProduct .img {
+  text-align: center;
+}
+.product .allProduct .img img {
+  width: 80%;
+  z-index: -2;
+}
+.product .allProduct .img span {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--first-color-lighten);
+  position: absolute;
+  top: 63px;
+  left: 40px;
+  z-index: -1;
+}
+
+.product .allProduct .salary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product .allProduct .salary i {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--first-color);
+  color: #fff;
+}
+
+/************************* end product *************************/
+@media (max-width: 1500px) {
+  .product .allProduct .img span {
+    top: 124px;
+    left: 92px;
+  }
+}
+
 @media (max-width: 1250px) {
   :root {
     --p: 20px 10%;
@@ -389,6 +449,10 @@ header.sticky .nav {
   }
   .icon_home {
     right: -7%;
+  }
+
+  .product .allProduct {
+    padding: 0 12%;
   }
 }
 @media (max-width: 757px) {
@@ -452,7 +516,27 @@ header.sticky .nav {
   .about_info {
     width: 100%;
   }
+  .product .allProduct {
+    padding: 0 5%;
+  }
+  .product .allProduct .img span {
+    top: 75px;
+    left: 59px;
+  }
+  .product .heading {
+    width: 60%;
+  }
 }
+@media (max-width: 582px) {
+  .product .allProduct .img span {
+    top: 210px;
+    left: 116px;
+  }
+  .product .heading {
+    width: 70%;
+  }
+}
+
 @media (max-width: 528px) {
   :root {
     --mb-2-5: 2rem;
@@ -496,6 +580,14 @@ header.sticky .nav {
   .card .container h1 {
     font-size: var(--mb-2);
   }
+
+  .product .allProduct .img span {
+    top: 167px;
+    left: 75px;
+  }
+  .product .heading {
+    width: 70%;
+  }
 }
 @media (max-width: 355px) {
   .card .container h1 {
@@ -503,6 +595,14 @@ header.sticky .nav {
   }
   .cardBox .box {
     width: 280px;
+  }
+
+  .product .allProduct .img span {
+    top: 82px;
+    left: 59px;
+  }
+  .product .heading {
+    width: 80%;
   }
 }
 @media (max-width: 323px) {
