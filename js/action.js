@@ -45,4 +45,8 @@ $(document).ready(function () {
       }
     });
   });
+
+  $(".allFaqs .box .top ").click(function () {
+    $(this).parent().toggleClass("active").siblings().removeClass("active");
+  });
 });

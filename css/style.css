@@ -74,7 +74,10 @@ body {
   --text-color: hsl(var(--hue), 4%, 75%);
   --body-color: hsl(var(--hue), 8%, 12%);
   --container-color: hsl(var(--hue), 8%, 16%);
+  background-color: var(--first-color-lighten);
+  --first-color-lighten: hsl(var(--hue), 8%, 20%);
 }
+
 button {
   cursor: pointer;
   border: none;
@@ -382,14 +385,13 @@ header.sticky .nav {
 .product .allProduct .box {
   padding: 0 20px;
   position: relative;
-  z-index: -3;
 }
 .product .allProduct .img {
   text-align: center;
 }
 .product .allProduct .img img {
   width: 80%;
-  z-index: -2;
+  z-index: 1;
 }
 .product .allProduct .img span {
   width: 90px;
@@ -398,10 +400,9 @@ header.sticky .nav {
   background-color: var(--first-color-lighten);
   position: absolute;
   top: 63px;
-  left: 40px;
   z-index: -1;
+  left: 40px;
 }
-
 .product .allProduct .salary {
   display: flex;
   align-items: center;
@@ -413,8 +414,54 @@ header.sticky .nav {
   background-color: var(--first-color);
   color: #fff;
 }
-
 /************************* end product *************************/
+/************************* end faqs *************************/
+.faqs {
+  padding: 40px 0;
+  height: 40vh;
+}
+.faqs h2 {
+  font-size: var(--mb-2);
+}
+.faqs {
+  background-color: var(--first-color-lighten);
+}
+.allFaqs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 40px;
+  gap: 20px;
+}
+.allFaqs .box .top {
+  background-color: var(--container-color);
+  padding: 15px 10px;
+  cursor: pointer;
+}
+.allFaqs .box.active .top {
+  border-bottom: 1px solid var(--first-color-light);
+  background-color: var(--first-color);
+  color: #fff;
+}
+.allFaqs .box .top i {
+  margin-right: 5px;
+}
+.allFaqs .box .bottom {
+  padding: 25px;
+  transition: 0.3s;
+  display: none;
+  color: #fff;
+  background-color: var(--first-color);
+  transition: 0.5s;
+  visibility: hidden;
+}
+.allFaqs .box.active .bottom {
+  display: block;
+  transition: 0.5s;
+  visibility: visible;
+}
+
+/************************* end faqs *************************/
+
 @media (max-width: 1500px) {
   .product .allProduct .img span {
     top: 124px;
@@ -536,7 +583,14 @@ header.sticky .nav {
     width: 70%;
   }
 }
-
+@media (max-width: 690px) {
+  .faqs h2 {
+    font-size: var(--mb-1-5);
+  }
+  .allFaqs {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 @media (max-width: 528px) {
   :root {
     --mb-2-5: 2rem;
@@ -604,9 +658,16 @@ header.sticky .nav {
   .product .heading {
     width: 80%;
   }
+
+  .faqs h2 {
+    font-size: var(--mb-1);
+  }
 }
-@media (max-width: 323px) {
+@media (max-width: 326px) {
   .cardBox .box {
     width: 260px;
+  }
+  .allFaqs .box .bottom p {
+    display: none;
   }
 }
