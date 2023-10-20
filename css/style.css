@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
 :root {
   --header-height: 3.5rem; /*56px*/
-
   /*Color mode HSL(hue, saturation, lightness)*/
   --hue: 152;
   --first-color: hsl(var(--hue), 24%, 32%);
@@ -14,9 +12,7 @@
   --text-color-light: hsl(var(--hue), 4%, 55%);
   --body-color: hsl(var(--hue), 0%, 100%);
   --container-color: #fff;
-
   /* Font and typography */
-  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -25,20 +21,16 @@
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
-
   /* Font weight*/
   --font-medium: 500;
   --font-semi-bold: 600;
-
   /* Margenes Bottom */
-  /*.5rem = 8px | 1rem = 16px ...*/
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
   --mb-1: 1rem;
   --mb-1-5: 1.5rem;
   --mb-2: 2rem;
   --mb-2-5: 2.5rem;
-
   /*z index */
   --z-tooltip: 10;
   --z-fixed: 100;
@@ -74,10 +66,8 @@ body {
   --text-color: hsl(var(--hue), 4%, 75%);
   --body-color: hsl(var(--hue), 8%, 12%);
   --container-color: hsl(var(--hue), 8%, 16%);
-  background-color: var(--first-color-lighten);
   --first-color-lighten: hsl(var(--hue), 8%, 20%);
 }
-
 button {
   cursor: pointer;
   border: none;
@@ -201,6 +191,7 @@ header.sticky .nav {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  background-color: var(--body-color);
   margin-top: 50px;
 }
 /* start info */
@@ -214,7 +205,6 @@ header.sticky .nav {
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
-
 .btn {
   padding: 10px 15px;
   background-color: var(--first-color-alt);
@@ -255,8 +245,9 @@ header.sticky .nav {
   gap: 10px;
   transform: rotate(90deg);
   position: absolute;
-  top: 45%;
+  top: 50%;
   right: 9%;
+  z-index: 10;
 }
 .icon_home h2 {
   color: var(--first-color);
@@ -332,8 +323,6 @@ header.sticky .nav {
 }
 /************************* end about *************************/
 /************************* start card *************************/
-.card .container {
-}
 .card .container .smallCard {
   background-color: var(--first-color);
   border-radius: 10px;
@@ -455,16 +444,129 @@ header.sticky .nav {
   transition: 0.5s;
   visibility: visible;
 }
-
 /************************* end faqs *************************/
-
+/************************* start contact *************************/
+.contact .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+}
+.contact_info {
+  width: 50%;
+}
+.contact_info h1 {
+  font-size: var(--mb-2-5);
+}
+.contact_info ul li {
+  margin: 15px 0;
+}
+.contact_info ul li h4 {
+  margin-bottom: 10px;
+  font-size: var(--mb-1);
+}
+.contact_info ul li span i {
+  margin-right: 5px;
+}
+/* start form */
+.form_contact {
+  width: 50%;
+}
+.form_contact .row {
+  position: relative;
+}
+.form_contact input,
+.form_contact textarea {
+  width: 100%;
+  border: none;
+  margin: 15px 0;
+  padding: 10px;
+  border-bottom: 2px solid var(--first-color);
+  resize: none;
+  outline: none;
+  background-color: var(--body-color);
+  color: var(--first-color);
+}
+.form_contact textarea {
+  margin-bottom: 25px;
+}
+.form_contact .row .span {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  font-size: var(--mb-1);
+  transition: 0.3s;
+}
+.form_contact input:focus ~ .span,
+.form_contact textarea:focus ~ .span {
+  top: -10px;
+}
+/************************* end contact *************************/
+/*************************start end  *************************/
+.big_ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, auto));
+  margin-top: 40px;
+  gap: 30px;
+  padding: 0 15%;
+}
+.big_ul li .logo,
+.big_ul li h2 {
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+.small_ul li {
+  margin: 10px 0;
+}
+.icon_End i {
+  margin: 0 10px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.icon_End i:hover {
+  transform: translateY(-8px);
+  cursor: pointer;
+}
+.small_ul_img img {
+  width: 60px;
+}
+.form_end {
+  position: relative;
+}
+.form_end input {
+  width: 120%;
+  padding: 20px 15px;
+  background-color: var(--first-color-lighten);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.form_end .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -40px;
+}
+/************************* end  *************************/
 @media (max-width: 1500px) {
   .product .allProduct .img span {
     top: 124px;
     left: 92px;
   }
+  .contact_info h1 {
+    font-size: var(--mb-2);
+  }
 }
-
+@media (max-width: 1472px) {
+  .form_end input {
+    width: 100%;
+  }
+  .form_end .btn {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+  }
+}
 @media (max-width: 1250px) {
   :root {
     --p: 20px 10%;
@@ -481,6 +583,9 @@ header.sticky .nav {
   .about_info h2 {
     font-size: var(--mb-2);
   }
+  .contact_info h1 {
+    font-size: var(--mb-1-5);
+  }
 }
 @media (max-width: 870px) {
   :root {
@@ -493,7 +598,6 @@ header.sticky .nav {
   .icon_home {
     right: -7%;
   }
-
   .product .allProduct {
     padding: 0 12%;
   }
@@ -570,6 +674,28 @@ header.sticky .nav {
     width: 60%;
   }
 }
+@media (max-width: 690px) {
+  .faqs h2 {
+    font-size: var(--mb-1-5);
+  }
+  .allFaqs {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .contact .container {
+    flex-direction: column;
+  }
+  .contact_info {
+    width: 100%;
+  }
+  .form_contact {
+    width: 100%;
+  }
+
+  .icon_home {
+    top: 40%;
+  }
+}
 @media (max-width: 582px) {
   .product .allProduct .img span {
     top: 210px;
@@ -577,14 +703,6 @@ header.sticky .nav {
   }
   .product .heading {
     width: 70%;
-  }
-}
-@media (max-width: 690px) {
-  .faqs h2 {
-    font-size: var(--mb-1-5);
-  }
-  .allFaqs {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 528px) {
@@ -623,14 +741,12 @@ header.sticky .nav {
   .about_info h2 {
     font-size: var(--mb-1-5);
   }
-
   .card .container .smallCard {
     padding: 10px;
   }
   .card .container h1 {
     font-size: var(--mb-2);
   }
-
   .product .allProduct .img span {
     top: 167px;
     left: 75px;
@@ -646,7 +762,6 @@ header.sticky .nav {
   .cardBox .box {
     width: 280px;
   }
-
   .product .allProduct .img span {
     top: 82px;
     left: 59px;
@@ -654,7 +769,6 @@ header.sticky .nav {
   .product .heading {
     width: 80%;
   }
-
   .faqs h2 {
     font-size: var(--mb-1);
   }
