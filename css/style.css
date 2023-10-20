@@ -418,7 +418,6 @@ header.sticky .nav {
 /************************* end faqs *************************/
 .faqs {
   padding: 40px 0;
-  height: 40vh;
 }
 .faqs h2 {
   font-size: var(--mb-2);
